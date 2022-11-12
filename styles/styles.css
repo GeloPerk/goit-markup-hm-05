@@ -28,7 +28,7 @@ body {
   --main-text-color: red;
   --h3-color: red;
 }
-header{
+.header__portfolio{
   border: 1px solid #ECECEC;
 }
 
@@ -62,6 +62,8 @@ header{
 }
 .header__contact {
   margin-left: auto;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 .header__list {
   list-style: none;
@@ -87,10 +89,29 @@ header{
   color: #212121;
   padding-top: 32px;
   padding-bottom: 32px;
+  position: relative;
 }
 
-.header__link:hover {
+.header__link:hover, 
+.header__link:focus,
+.header__link::after{
   color: #2196f3;
+}
+.header__link::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  background-color: #2196f3;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  opacity: 0;
+}
+.header__link:hover::after,
+.header__link:focus::after {
+  opacity: 1;
 }
 .header__item{
   margin-left: 50px;
