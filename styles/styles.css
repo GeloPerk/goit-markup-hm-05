@@ -91,6 +91,7 @@ body {
   padding-top: 32px;
   padding-bottom: 32px;
   position: relative;
+  transition: color cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header__link:hover,
@@ -109,6 +110,7 @@ body {
   height: 4px;
   border-radius: 4px;
   opacity: 0;
+  transition: opacity cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header__link:hover::after,
 .header__link:focus::after {
@@ -117,6 +119,7 @@ body {
 .header__item {
   margin-left: 50px;
 }
+.header__contact-list{transition: color cubic-bezier(0.4, 0, 0.2, 1);}
 .header__contact-list:hover {
   color: #2196f3;
 }
@@ -139,6 +142,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 32px 0;
+  transition: color cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header__contact-list {
   margin-right: 30px;
@@ -162,11 +166,15 @@ body {
   justify-content: center;
 }
 .main__info {
+  max-width: 1600px;
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url('../img/background.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   padding: 200px 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   align-items: center;
   text-align: center;
   justify-content: center;
@@ -200,6 +208,7 @@ body {
   border: 0;
   border-radius: 4px;
   cursor: pointer;
+  transition: color cubic-bezier(0.4, 0, 0.2, 1), background-color cubic-bezier(0.4, 0, 0.2, 1);
 }
 .main__btn:hover {
   color: #2196f3;
@@ -274,12 +283,11 @@ body {
 
 .about__overlay{
   position: absolute;
+  height: 70px;
   bottom: 0;
   left: 0;
   display: flex;
   width: 100%;
-  padding-top: 24px;
-  padding-bottom: 24px;
   justify-content: center;
   align-items: center;
   background: rgba(47, 48, 58, 0.8);
@@ -364,6 +372,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: color cubic-bezier(0.4, 0, 0.2, 1), background-color cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link__svg:hover,
 .link__svg:focus {
@@ -404,6 +413,7 @@ body {
   color: #afb1b8;
   border: 2px solid #afb1b8;
   border-radius: 4px;
+  transition: color cubic-bezier(0.4, 0, 0.2, 1), border-color cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon {
   fill: currentColor;
@@ -471,8 +481,9 @@ body {
   justify-content: center;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color cubic-bezier(0.4, 0, 0.2, 1);
 }
-.link__svg-footer:hover {
+.link__svg-footer:hover,.link__svg-footer:focus {
   background-color: #2196f3;
 }
 .footer__h2 {
@@ -493,6 +504,9 @@ body {
   position: fixed;
   width: 100%;
   height: 100%;
+
+  transition: visibility 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   top: 0;
   left: 0;
   right: 0;
@@ -501,7 +515,6 @@ body {
   overflow-x: hidden;
   z-index: 10;
   background: rgba(0, 0, 0, 0.2);
-  transition: visibility 0.25s cubic-bezier(0.4 0, 0.2, 1), opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-hidden{
   visibility: hidden;
@@ -541,7 +554,6 @@ body {
       width: 30px;
       height: 30px;
 }
-..modal__btn-close{}
 
 /* portholio */
 
@@ -563,13 +575,14 @@ body {
 .porfolio__list {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 8px;
 }
+.portfolio__main{margin-top: 94px;}
 .porfolio__list {
-  margin: 94px 0 34px 0;
   display: flex;
   justify-content: center;
   text-decoration: none;
+  padding-bottom: 34px;
 }
 .porfolio__items:nth-child(3n + 3) {
   margin-right: 0;
@@ -582,6 +595,7 @@ body {
   height: 80px;
   text-align: center;
   background: rgba(red, 0.25);
+  
 }
 .portfolio__btn {
   font-weight: 500;
@@ -597,15 +611,14 @@ body {
   background: #f5f4fa;
   border: 0;
   border-radius: 4px;
+  transition: box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), background cubic-bezier(0.4, 0, 0.2, 1), color cubic-bezier(0.4, 0, 0.2, 1);
 }
-.portfolio__btn:hover {
+.portfolio__btn:hover,
+.portfolio__btn:focus  {
   background: #2196f3;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 26px;
-  text-align: center;
-  letter-spacing: 0.03em;
   color: #ffffff;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+cursor: pointer;
 }
 .portfolio__content-h3 {
   font-weight: 700;
@@ -628,6 +641,7 @@ body {
 }
 .portfolio__content-text {
   padding: 20px 24px;
+  transition: box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio__content-items:hover,
 .portfolio__content-items:focus{
@@ -650,6 +664,11 @@ body {
 transform: translateY(-100%);
 opacity: 1;
 }
+.portfolio__link{
+  border-bottom: 1px solid #EEEEEE;
+  border-left: 1px solid #EEEEEE;
+  border-right: 1px solid #EEEEEE;
+transition: opacity cubic-bezier(0.4, 0, 0.2, 1);}
 .portfolio__hover-text{
 font-family: 'Roboto';
 font-weight: 400;
