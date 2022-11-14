@@ -641,6 +641,11 @@ cursor: pointer;
 }
 .portfolio__content-text {
   padding: 20px 24px;
+}
+.portfolio__content-items{
+  border-bottom: 1px solid #EEEEEE;
+  border-left: 1px solid #EEEEEE;
+  border-right: 1px solid #EEEEEE;
   transition: box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio__content-items:hover,
@@ -665,9 +670,6 @@ transform: translateY(-100%);
 opacity: 1;
 }
 .portfolio__link{
-  border-bottom: 1px solid #EEEEEE;
-  border-left: 1px solid #EEEEEE;
-  border-right: 1px solid #EEEEEE;
 transition: opacity cubic-bezier(0.4, 0, 0.2, 1);}
 .portfolio__hover-text{
 font-family: 'Roboto';
